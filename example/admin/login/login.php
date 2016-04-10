@@ -141,9 +141,6 @@
           <div class="inside-block">
             <img src="assets/images/Final.png" alt class="logo">
             <h1><strong>Admin Panel</strong></h1>
-            <div class="alert login-wrong alert-red">
-                      <strong>Paniek!</strong> Je hebt de verkeerde gebruikers naam en wachtwoord ingevuld!.
-                    </div>
             <form action="" method="post" id="form-signin" class="form-signin">
               <section>
                 <div class="input-group">
