@@ -111,18 +111,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KB/BB Brievenbus 1.3 - Login Page</title>
+    <title>Admin blog login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
 
-    <link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
-    <!-- Bootstrap -->
-    <link href="assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap-checkbox.css">
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap/bootstrap-dropdown-multilevel.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-    <link href="assets/css/minimal.css" rel="stylesheet">
+        <style>
+          body {
+            padding-bottom: 40px;
+            background-color: #eee;
+          }
+          
+          .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+          }
+          .form-signin .form-signin-heading,
+          .form-signin .checkbox {
+            margin-bottom: 10px;
+          }
+          .form-signin .checkbox {
+            font-weight: normal;
+          }
+          .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+          }
+          .form-signin .form-control:focus {
+            z-index: 2;
+          }
+          .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+          .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+          }
+        </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -131,38 +169,26 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="bg-1">
-    <!-- Wrap all page content here -->
-    <div id="wrap">
-      <!-- Make page fluid -->
-      <div class="row">
-        <!-- Page content -->
-        <div id="content" class="col-md-12 full-page login">
-          <div class="inside-block">
-            <img src="assets/images/Final.png" alt class="logo">
-            <h1><strong>Admin Panel</strong></h1>
-            <form action="" method="post" id="form-signin" class="form-signin">
-              <section>
-                <div class="input-group">
-                  <input type="text" class="form-control" name="username" placeholder="Gebruikersnaam">
-                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                </div>
-                <div class="input-group">
-                  <input type="password" class="form-control" name="password" placeholder="Wachtwoord">
-                  <div class="input-group-addon"><i class="fa fa-key"></i></div>
-                </div>
-              </section>
-              <section class="log-in">
-                <button class="btn btn-greensea">Log In</button>
-               
-                </form>
-              </section>
-            </form>
-          </div>
+  <body>
+        <?php
+          include '../nav.php';
+        ?>
+    <div class="container">
+
+      <form class="form-signin" action="" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
         </div>
-        <!-- /Page content -->  
-      </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
     </div>
-    <!-- Wrap all page content end -->
   </body>
 </html>

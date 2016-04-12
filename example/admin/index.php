@@ -18,6 +18,7 @@
      
     // We can display the user's username to them by reading it from the session array.  Remember that because 
     // a username is user submitted content we must use htmlentities on it before displaying it to the user. 
+    
 ?> 
 <html>
     <head>
@@ -45,7 +46,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Home</a></li>
-        <li class="active"><a href="#">Admin panel <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="#">Admin panel</a></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -77,8 +78,8 @@
             $app = \Slim\Slim::getInstance();
             
             //App URLs (end points) and Function references
-            $app->get('/', 'posts');  //Gets all docenten posts
-            $app->get('/posts/search/:id', 'search_post'); //Search for specific leerlingen post by using the ID 
+            $app->get('/', 'posts');  //Gets all posts
+            $app->get('/posts/search/:id', 'search_post'); //Search for specific post by using the ID 
             
             
             
@@ -130,6 +131,16 @@
                 $dbuser="a1070rik";
                 $dbpass="";
                 $dbname="blog";
+                $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $dbh;
+            }
+            
+            function getConnection2(){
+                $dbhost="localhost";
+                $dbuser="a1070rik";
+                $dbpass="";
+                $dbname="login";
                 $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
                 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 return $dbh;
