@@ -42,9 +42,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Gegevens worden uitgevoerd voor tabel `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `salt`, `email`, `image_url`) VALUES
-(1, 'Rik', '26f3fc6ab2e60e60f98441a7870f392a7275670935e75e8b5cd81dd4760791e5', '6c4fff6b55464c2b', 'riknijdeken@live.nl', 'http://www.sherv.net/cm/emo/funny/2/big-dancing-banana-smiley-emoticon.gif');
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
